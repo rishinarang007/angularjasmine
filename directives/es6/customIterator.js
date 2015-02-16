@@ -9,19 +9,19 @@ class Company{
     
    // console.log(names)
   
-  	this.newArr = this.employees.concat(names);
+  	this.employees = this.employees.concat(names);
    // console.log(this.employees)
     
   }
   
   get EmployeesArr(){
   
-  		return this.newArr;
+  		return this.employees;
   }
   
   [Symbol.iterator](){
   		
-    return new ArrayIterator(this.newArr);
+    return new ArrayIterator(this.employees);
   }
   
 }
