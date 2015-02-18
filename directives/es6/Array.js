@@ -4,7 +4,17 @@ console.log(x)
 var x = new Array(23,34,23,23); //23,34,23,23
 console.log(x)
 
-var y = Array.of(12) //urn values into an instance of a sub-constructor of Array then
+var y = Array.of(12,34,23,12)
+console.log(y) //[12,34,23,12]
+console.log(y.length) //4
+
+var x = new Array(23); //......................
+console.log(x)
+
+var x = new Array(23,34,23,23); //23,34,23,23
+console.log(x)
+
+var y = Array.of(12)
 console.log(y) //[12]
 console.log(y.length) //1
 
