@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="jquery" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    
+    <template>
+      
+      <p>I am coming from template</p>
+      
+      <script>
+        
+      </script>
+      
+      
+      <img src="bad/path.jpg"></img>
+      
+    </template>
+    
+    
+    <script>
+      
+      var template = document.querySelector("template");
+      
+      var clone = document.importNode(template.content, true);
+      
+      document.body.appendChild(clone);
+      
+      
+    </script>
+    
+  </body>
+
+</html>
