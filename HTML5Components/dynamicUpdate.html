@@ -38,6 +38,32 @@ document.body.appendChild(clone)
      
      
    </script>
+   
+    <script>
+      
+      var elementProto = Object.create(HTMLElement.prototype);
+      
+      elementProto.createdCallback = function(){
+        
+        this.innerHTML = "<div>This is my div</div>"
+      }
+      
+      var ele = document.registerElement("my-element",{
+          
+          prototype: elementProto
+        
+      })
+      
+     // document.body.innerHTML = "<my-element></my-element>"
+     var element = new ele();
+     document.body.appendChild(element)
+     
+     var e = document.createElement("my-element")
+     
+     document.body.appendChild(e)
+    
+    </script>
+    
   
    
 
