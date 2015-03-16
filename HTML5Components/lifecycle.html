@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <h1>Hello Plunker!</h1>
+    
+    <hello-world></hello-world>
+    
+   <script>
+     
+     
+     var component = Object.create(HTMLElement.prototype)
+     
+     component.createdCallback = function(){
+       
+        this.innerHTML = "<div>This is my div</div>"  
+       
+     }
+     
+     document.registerElement("hello-world", {
+         
+         prototype:component
+       
+     })
+     
+     component.attachedCallBack = function(){
+       
+       console.log("attached")
+     }
+     
+     
+      component.detachedCallBack = function(){
+       
+       console.log("detachedCallBack")
+     }
+     
+     
+      component.attributeChangedCallBack = function(attr, oldVal, newVal){
+       
+       console.log(attr, oldVal, newVal)
+       
+       
+     }
+     
+     document.querySelector("hello-world").setAttribute("test", 1)
+     
+     
+     document.querySelector("hello-world").remove()
+     
+     
+     
+   </script>
+     
+    
+  </body>
+ 
+
+</html>
