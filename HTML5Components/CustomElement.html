@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <h1>Hello Plunker!</h1>
+    
+    <button is="plural-sight-button"></button>
+    
+     <script>
+       
+       var ele = Object.create(HTMLButtonElement.prototype);
+       
+       ele.createdCallback = function(){
+         
+         this.innerHTML = "this is a button"
+         this.value = "Default Valie"
+         this.style.color = "red"
+         this.addEventListener("click", function(){
+           alert('sd');
+         }, false)
+       }
+       
+       var myButton = document.registerElement("plural-sight-button",{
+         
+           prototype:ele,
+           extends:"button"
+       })
+       
+       //document.body.appendChild(new ele())
+       
+       //var button = document.createElement("button", "plural-sight-button")
+       
+       //document.body.appendChild(button);
+       
+       //document.body.innerHTML = "<button is='plural-sight-button'></button>"
+       
+       
+       
+     </script>
+    
+  </body>
+ 
+
+</html>
