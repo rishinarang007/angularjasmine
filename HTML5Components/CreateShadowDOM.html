@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div id="host"></div>
+    <template>
+      <style>
+        h1 {color: green;}
+      </style>
+      <h1>Hi I am from shadow dom</h1>
+    </template>
+    
+    <script>
+      
+      var element = document.querySelector("template");
+      
+      var e = document.importNode(element.content, true);
+      
+      //document.body.appendChild(e)
+      
+      var host = document.getElementById("host");
+      
+      var root = host.createShadowRoot();
+      
+      root.appendChild(e)
+      
+     // console.log(document.querySelector("h1"))
+      
+      
+    </script>
+    
+  </body>
+
+</html>
