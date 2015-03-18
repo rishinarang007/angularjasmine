@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="app"></div>
+    
+    <template>
+      
+      <h2>Details</h2>
+      
+      <ul>
+          <li>purpulr-flower.tif<em>not supported file format</em></li>
+          <li>flowerphoto.zi<em>not supported file format</em></li>
+      </ul>
+      
+      <style>
+     
+        ul li em {
+          display: block;
+        }
+        
+      </style>
+      
+    </template>
+    
+    <script>
+      
+      var temp = document.querySelector("template");
+      
+      var component = document.importNode(temp.content, true);
+      
+      var app = document.querySelector("#app");
+      
+      var root = app.createShadowRoot();
+      
+      root.appendChild(component);
+      
+    </script>
+  </body>
+
+</html>
