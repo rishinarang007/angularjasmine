@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="app"></div>
+    
+    <comment-form>
+
+    <h1>Tell us what you know</h1>
+
+    <p class="instructions">Fill this foem</p>
+
+    <p class="footer">This is a footer form</p>
+
+    </comment-form>
+
+
+    <template>      
+     <form>
+      <fieldset>
+        <legend>
+            <content select="h1"></content>
+        </legend>
+
+      <content select="p1.instructions"></content>
+
+      <content select=".footer"></content>
+        
+      </fieldset>
+      </form>
+
+    </template>
+    
+    <script>
+      
+      var obj = Object.create(HTMLElement.prototype);
+
+      obj.createdCallBack = function(){
+
+          var component = document.querySelector("template");
+          var nodeRef = document.importNode(component.content,true);
+
+          var shadow = this.createShadowRoot();
+
+          shadow.appendChild(nodeRef);
+
+      }
+
+      document.registerElement("comment-form",{
+
+        prototype: obj
+      })
+
+      
+      
+
+      
+
+   
+      
+    </script>
+  </body>
+
+</html>
