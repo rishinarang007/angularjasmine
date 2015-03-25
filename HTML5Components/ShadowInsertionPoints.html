@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div id="host">
+      Light DOM
+    </div>
+    
+    
+    <script>
+      
+      var host = document.querySelector("#host");
+      
+      var root1 = host.createShadowRoot();
+      var root2 = host.createShadowRoot();
+      var root3 = host.createShadowRoot();
+      
+      root1.innerHTML = "<div>Root 1</div>"
+      
+      root2.innerHTML = "<shadow></shadow><div>Root 2</div><content></content>"
+      
+      root3.innerHTML = "<div>Root 3</div><shadow></shadow>"
+      
+    </script>
+    
+    
+  </body>
+
+</html>
