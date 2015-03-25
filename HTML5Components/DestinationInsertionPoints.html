@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+   
+   <div id="host">
+     <ul>
+       <li>Wilbur</li>
+       <li>Asas</li>
+       <li>morete</li>
+     </ul>
+   </div>
+   
+   <template>
+     <h1>Bad Cat Names</h1>
+     <content id="test"></content>
+   </template>
+    
+    <script>
+      
+      var host = document.querySelector("#host");
+      
+      var root = host.createShadowRoot();
+      
+      var template = document.querySelector("template");
+      
+      var component = document.importNode(template.content, true);
+      
+      root.appendChild(component);
+      
+      console.log(root.querySelector("#test").getDistributedNodes())
+     
+     
+      console.log(document.querySelector("ul").getDestinationInsertionPoints())
+     
+      
+    </script>
+    
+    
+  </body>
+
+</html>
